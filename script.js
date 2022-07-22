@@ -1,4 +1,3 @@
-
 const switchElements = document.getElementsByName('theme');
 
 const displayInput = document.getElementById('display-input');
