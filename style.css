@@ -1,0 +1,369 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+    font-family: 'Spartan', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    max-width: 100vw;
+    min-height: 100vh;  
+    font-size: 64.5%;
+}
+
+body {
+    background: hsl(222, 26%, 31%);
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+}
+
+body.theme2 {
+    background: hsl(0, 0%, 90%);
+}
+
+body.theme3 {
+    background: hsl(268, 75%, 9%);
+}
+
+.container {
+    margin: 0 auto;
+    width: min(100%, 375px);
+    padding: 25px 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.header span {
+    color: #fff;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+body.theme2 .header span {
+    color: hsl(60, 10%, 19%);
+}
+
+body.theme3 .header span {
+    color: hsl(52, 100%, 62%);
+}
+
+.switch-container{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+body.theme2 .switch-container{
+    color: hsl(60, 10%, 19%);
+}
+
+body.theme3 .switch-container{
+    color: hsl(52, 100%, 62%);
+
+}
+
+.switch-container span {
+    font-size: .7rem;
+    margin: .4rem 1.7rem;
+}
+
+.switch-button {
+    background: hsl(223, 31%, 20%);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 48px;
+    height: 18px;
+}
+
+body.theme2 .switch-button {
+    background: hsl(0, 5%, 81%);
+}
+
+body.theme3 .switch-button {
+    background: hsl(268, 71%, 12%);
+}
+
+.theme-option {
+    left: -99999px;
+    position: absolute;
+}
+
+.theme-label {
+    position: absolute;
+    top: -14px;
+    font-size: .7rem;
+    cursor: pointer;
+    padding: 29px 8px ;
+    padding-top: 0px;
+}
+
+.theme-label:nth-child(4) {
+    left: 0px;
+}
+
+.theme-label:nth-child(5) {
+    left: 13px;
+}
+
+.theme-label:nth-child(6) {
+    right: 0px;
+}
+
+.switch-slider {
+    width: 10px;
+    height: 10px;
+    background: hsl(6, 63%, 50%);
+    border-radius: 50%;
+    top: 4px;
+    position: absolute;
+    transition: all .3s ease;
+}
+
+body.theme2 .switch-slider {
+    background: hsl(25, 98%, 40%);;
+}
+
+body.theme3 .switch-slider {
+    background: hsl(176, 100%, 44%);
+
+}
+
+.switch-slider:hover {
+    filter: brightness(130%);
+}
+
+.switch-button input:nth-child(1):checked ~ .switch-slider {
+    left: 4px;
+}
+
+.switch-button input:nth-child(2):checked ~ .switch-slider {
+    left: 19px;
+}
+
+.switch-button input:nth-child(3):checked ~ .switch-slider {
+    left: 34px;
+}
+
+#display-input, theme-label[for=display-input] {
+    position: absolute;
+    left: -99999px;    
+    overflow-x: scroll;
+}
+
+#display-container, #display-second {
+    background: hsl(224, 36%, 15%);
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+    padding: 1.5rem;
+}
+
+#display-container {
+    background: hsl(224, 36%, 15%);
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0px 0px 8px 8px;
+    color: #fff;
+    padding-top: .5rem;
+    height: 5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+body.theme2 #display-container {
+    color: hsl(221, 14%, 31%);
+    background: hsl(0, 0%, 93%);
+}
+
+body.theme3 #display-container {
+    color: hsl(52, 100%, 62%);
+    background: hsl(268, 71%, 12%);
+
+}
+
+#display-container span {
+    font-size: 5em;
+    white-space: nowrap;
+}
+
+#display-second {
+    width: 100%;
+    background: hsl(224, 36%, 15%);
+    box-sizing: border-box;
+    text-align: right;
+    padding: 1.5rem;
+    padding-bottom: .5rem;
+    border-radius: 8px 8px 0px 0px;
+    color: hsl(225, 21%, 49%);
+    min-height: 3.5rem;
+}
+
+body.theme2 #display-second {
+    color: hsl(185, 42%, 37%);
+    background: hsl(0, 0%, 93%);
+}
+
+body.theme3 #display-second {
+    color: hsl(281, 89%, 26%);
+    background: hsl(268, 71%, 12%);
+}
+
+.keypad {
+    background: hsl(223, 31%, 20%);
+    padding: 2rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    display: grid;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "btn btn btn btn"
+    "btn btn btn btn"
+    "btn btn btn btn"
+    "btn btn btn btn"
+    "reset reset equal equal";
+}
+
+body.theme2 .keypad {
+    background: hsl(0, 5%, 81%);
+}
+
+body.theme3 .keypad {
+    background: hsl(268, 71%, 12%);
+}
+
+#calculate {
+    grid-area: equal;
+    background: hsl(6, 63%, 50%);
+    color: #fff;
+    box-shadow: inset 0px -8px 0px -5px hsl(6, 70%, 34%);
+}
+
+body.theme2 #calculate {
+    background: hsl(25, 98%, 40%);
+    box-shadow: inset 0px -8px 0px -5px hsl(25, 99%, 27%);
+}
+
+body.theme3 #calculate {
+    background: hsl(176, 100%, 44%);
+    box-shadow: inset 0px -8px 0px -5px hsl(177, 92%, 70%);
+    color: hsl(198, 20%, 13%);
+}
+
+#calculate:active {
+    box-shadow: 0px 3px 0px hsl(6, 70%, 34%);
+}
+
+body.theme2 #calculate:active {
+    box-shadow: 0px 3px 0px hsl(25, 99%, 27%);
+}
+
+body.theme3 #calculate:active {
+    box-shadow: 0px 3px 0px hsl(177, 92%, 70%);
+}
+
+.btn { 
+    min-height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 1.8rem;
+    line-height: 1rem;
+    box-shadow: inset 0px -8px 0px -5px hsl(28, 16%, 65%);
+}
+
+.btn:hover {
+    filter: brightness(130%);
+}
+
+body.theme3 .btn:hover {
+    filter: brightness(150%);
+}
+
+body.theme2 .btn {
+    background: hsl(45, 7%, 89%);
+    color: hsl(60, 10%, 19%);
+    box-shadow: inset 0px -8px 0px -5px hsl(35, 11%, 61%);
+}
+
+body.theme3 .btn {
+    background: hsl(268, 47%, 21%);
+    color: hsl(52, 100%, 62%);
+    box-shadow: inset 0px -8px 0px -5px hsl(290, 70%, 36%);
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 0px 3px 0px hsl(28, 16%, 65%);
+}
+
+body.theme2 .btn:active {
+    box-shadow: 0px 3px 0px hsl(35, 11%, 61%);
+}
+
+body.theme3 .btn:active {
+    box-shadow: 0px 3px 0px hsl(290, 70%, 36%);
+}
+
+#btn-deleted {
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: inset 0px -8px 0px -5px hsl(224, 28%, 35%);
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+#btn-reset {
+    grid-area: reset;
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: inset 0px -8px 0px -5px hsl(224, 28%, 35%);
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+body.theme2 #btn-deleted {
+    background: hsl(185, 42%, 37%);
+    box-shadow: inset 0px -8px 0px -5px hsl(185, 58%, 25%);
+    color: #fff;
+}
+
+body.theme2 #btn-reset {
+    background: hsl(185, 42%, 37%);
+    box-shadow: inset 0px -8px 0px -5px hsl(185, 58%, 25%);
+    color: #fff;
+}
+
+body.theme3 #btn-deleted {
+    background: hsl(281, 89%, 26%);
+    box-shadow: inset 0px -8px 0px -5px hsl(285, 91%, 52%);
+    color: #fff;
+}
+
+body.theme3 #btn-reset {
+    background: hsl(281, 89%, 26%);
+    box-shadow: inset 0px -8px 0px -5px hsl(285, 91%, 52%);
+    color: #fff;
+}
